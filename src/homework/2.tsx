@@ -1,9 +1,9 @@
 import React, { useReducer } from "react";
 
-const initialState = {
-  isRequestInProgress: false,
-  requestStep: "idle",
-};
+interface initialState {
+  isRequestInProgress: false;
+  requestStep: "idle" | "start" | "pending" | "finished";
+}
 
 type State = {
   isRequestInProgress: boolean;
@@ -31,7 +31,7 @@ function requestReducer(state: State, action: Action): State {
   }
 }
 
-export function RequestComponent() {
+export function RequestComponent(initialState: initialState) {
   const [requestState, requestDispatch] = useReducer(
     requestReducer,
     initialState

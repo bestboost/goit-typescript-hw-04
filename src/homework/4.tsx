@@ -9,8 +9,7 @@ type SelectedMenu = {
 };
 
 // Додати тип Menu Selected
-type MenuSelected = { selectedMenu: object };
-
+type MenuSelected = { selectedMenu: any };
 const MenuSelectedContext = createContext<MenuSelected>({
   selectedMenu: {},
 });

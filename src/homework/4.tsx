@@ -9,13 +9,13 @@ type SelectedMenu = {
 };
 
 // Додати тип Menu Selected
-type MenuSelected = { selectedMenu: any };
+type MenuSelected = { selectedMenu: SelectedMenu };
 const MenuSelectedContext = createContext<MenuSelected>({
-  selectedMenu: {},
+  selectedMenu: { id: "first" },
 });
 
 // Додайте тип MenuAction
-type MenuAction = { onSelectedMenu(SelectedMenu: object): void };
+type MenuAction = { onSelectedMenu(SelectedMenu: SelectedMenu): void };
 const MenuActionContext = createContext<MenuAction>({
   onSelectedMenu: noop,
 });
